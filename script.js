@@ -21,7 +21,7 @@ document.querySelectorAll(".close-button").forEach(btn => {
 
 
 payForm.onsubmit = async (e) => {
-    e.preventDefault(); // Чтобы страница не перезагружалась
+    e.preventDefault();
     
     const nickname = payForm.querySelector('input[name="nickname"]').value;
     const payButton = payForm.querySelector('.modal-pay-button');
@@ -29,25 +29,25 @@ payForm.onsubmit = async (e) => {
     payButton.innerText = "Загрузка...";
     payButton.disabled = true;
 
-    try {
-        // Замени 1.2.3.4 на реальный IP твоего сервера
-        const response = await fetch('http://77.34.6.100:25570/test-payment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nickname: nickname })
-        });
+try {
+    const response = await fetch('http://77.34.6.100:25570/test-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nickname: nickname })
+    });
 
-        const result = await response.json();
-        
-        if (result.pay_url) {
-            // Магия: перенаправляем на ЮKassa
-            window.location.href = result.pay_url;
-        }
-    } catch (err) {
-        console.error(err);
-        alert("Сервер оплаты недоступен. Проверь IP и CORS.");
-    } finally {
-        payButton.innerText = "Оплатить";
-        payButton.disabled = false;
+    const result = await response.json();
+    
+    if (result.success) {
+        alert("Успешно! " + result.message);
+        location.reload(); // Перезагружаем страницу
+    } else {
+        alert("Ошибка: " + (result.error || "Не удалось выполнить команду"));
     }
+} catch (err) {
+    alert("Ошибка соединения с API");
+} finally {
+    payButton.innerText = "Оплатить";
+    payButton.disabled = false;
+}
 };
