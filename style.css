@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+body{
+    background: linear-gradient(-20deg, #1E1E1E, #000000);
+    height: 500vh;
+}
+
+header{
+    position: relative;
+    display: flex;
+    width:1000px;
+    height: 45px;
+    margin-left: 162px;
+    margin-right: 162px;
+    margin-top: 45px;
+    justify-content: space-between;
+    align-items: center;
+}
+#Logo a{
+    font-size: 32px;
+    text-decoration: none;
+    color: #FFC300;
+    font-family: "Inter", sans-serif;
+    font-style: bold;
+    font-weight: 700;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 45vw;
+    align-items: center;
+    white-space: nowrap;
+
+}
+nav a{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 51px;
+    text-decoration: none;
+    font-size: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-style: bold;
+    font-weight: 600;
+    transition: 0.4s ease-out;
+}
+nav a:hover{
+    transition: 0.2s ease-in;
+    color: #FFC300;
+    filter: drop-shadow(0px 0px 1px #FFC300);
+}
+main{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+#MainText{
+    margin-top: 130px;
+    margin-left: 138px;
+    grid-column: 1;
+}
+.ApiarySMPMain{
+    font-size: 40px;
+    text-decoration: none;
+    color: #FFC300;
+    font-family: "Inter", sans-serif;
+    font-style: medium;
+    font-weight: 700;
+    filter: drop-shadow(0px 0px 2px #FFC300);
+}
+#MainText p{
+    margin-top: 25px;
+    font-size: 32px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-style: medium;
+    font-weight: 500;
+}
+#Bee{
+    margin-top: 5px;
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    margin-right: 162px;
+}
+.BeeMain{
+    grid-column: 2;
+    max-width: 600px;
+    width: 600px;
+    grid-row: 1;
+    z-index: 2;
+    margin-top: 65px;
+    margin-left: 90px;
+    animation: fly 5s ease-in-out infinite;
+}
+.NeonMain{
+    grid-column: 2;
+    max-width: 720px;
+    width: 720px;
+    grid-row: 1;
+    z-index: 1;
+}
+.MainButton{
+    margin-top: 35px;
+    background-color:#FFC300;
+	border-radius:50px;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family: "Inter", sans-serif;
+    font-style: medium;
+    font-weight: 500;
+	font-size:32px;
+	padding:28px 108px;
+    border-color: #FFC300;
+    border: 0px solid;
+	text-decoration:none;
+    filter: drop-shadow(0px 0px 10px #FF9500);
+    transition: 0.5s;
+}
+.MainButton:hover{
+    filter: drop-shadow(0px 0px 20px #FF9500);
+    transition: 0.5s;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-40px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Затемнение фона вокруг окна */
+.overlay {
+    display: none; /* По умолчанию скрыто */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Само модальное окно */
+.modal {
+    background: #1E1E1E;
+    border: 2px solid #FFC300;
+    padding: 40px;
+    border-radius: 25px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 0px 30px rgba(255, 195, 0, 0.2);
+}
+
+.modal-title {
+    color: #FFC300;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.modal-price {
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 25px;
+}
+
+.modal-price span {
+    color: #FFC300;
+    font-weight: bold;
+}
+
+/* Поле ввода */
+.modal-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.modal-input:focus {
+    border-color: #FFC300;
+}
+
+/* Кнопка оплаты внутри окна */
+.modal-pay-button {
+    background-color: #FFC300;
+    color: #000;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.modal-pay-button:hover {
+    filter: drop-shadow(0px 0px 10px #FFC300);
+}
+
+/* Кнопка закрытия (крестик) */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+footer.footer {
+    margin-top: 200px;
+    padding: 60px 0;
+    background: #000;
+    border-top: 1px solid #222;
+}
+
+.footer-content {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-block h3 {
+    color: #FFC300;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 15px;
+}
+
+.footer-block p,
+.footer-block a {
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-link:hover {
+    color: #FFC300;
+}
+
+/* Большие модальные окна */
+.modal.large {
+    width: 700px;
+    text-align: left;
+}
+
+.modal-text {
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ApiarySMP</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="Logo">
+                <a href="">ApiarySMP</a>
+            </div>
+            <nav>
+                <a href="#">О сервере</a>
+                <a href="#">Сообзество</a>
+                <a href="#">Магазин</a>
+            </nav>
+        </header>
+        <main>
+            <div id="MainText">
+              <div>
+                <h1 class="ApiarySMPMain">ApiarySMP - Жужим вместе</h1>
+              </div>
+              <p>
+                Сервер с развивающимся сообществом, это не</br>
+                просто ванила - увлекательные ивенты которые</br>
+                проводяк как игроки так и администарция сервера,</br>
+                поддержка 24/7, внутриние суды и хорошая </br>
+                модерация, заинтригован? Тогда чего ты ждешь,</br>
+                присоеденяйся быстрее, не упусти свой шанс!
+              </p>
+              <button class="MainButton" id="openModal">Присоеденится</button>
+            </div>
+            <div id="Bee">
+                <img src="./img/NeonMain.svg" class="NeonMain">
+                <img src="./img/буэно3 1.svg" class="BeeMain">
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-block">
+                    <h3>Контакты</h3>
+                    <p>Email: <a href="mailto:pizduke13@gmail.com">pizduke13@gmail.com</a></p>
+                </div>
+        
+                <div class="footer-block">
+                    <h3>Реквизиты</h3>
+                    <p>Самозанятый</p>
+                    <p>Бризицкий Михаил Романович</p>
+                    <p>ИНН: 253609705426</p>
+                </div>
+        
+                <div class="footer-block">
+                    <h3>Документы</h3>
+                    <a href="#" class="footer-link" data-modal="offerModal">Публичная оферта</a>
+                    <a href="#" class="footer-link" data-modal="termsModal">Пользовательское соглашение</a>
+                    <a href="#" class="footer-link" data-modal="deliveryModal">Получение услуги</a>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- ОФЕРТА -->
+        <div class="overlay" id="offerModal">
+            <div class="modal large">
+                <span class="close-button">&times;</span>
+                <h2 class="modal-title">Публичная оферта</h2>
+                <p class="modal-text">
+                    Настоящий документ является официальным предложением
+                    самозанятого Бризицкого Михаила Романовича (ИНН 253609705426)
+                    заключить договор на оказание цифровых услуг.
+                    <br><br>
+                    Услугой является предоставление доступа к серверу ApiarySMP
+                    после успешной оплаты.
+                </p>
+            </div>
+        </div>
+        
+        <!-- ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ -->
+        <div class="overlay" id="termsModal">
+            <div class="modal large">
+                <span class="close-button">&times;</span>
+                <h2 class="modal-title">Пользовательское соглашение</h2>
+                <p class="modal-text">
+                    Оплачивая услугу, пользователь подтверждает, что ознакомлен
+                    с правилами сервера ApiarySMP и обязуется их соблюдать.
+                    <br><br>
+                    Услуга является цифровой и считается оказанной с момента
+                    предоставления доступа.
+                </p>
+            </div>
+        </div>
+        
+        <!-- ПОЛУЧЕНИЕ УСЛУГИ -->
+        <div class="overlay" id="deliveryModal">
+            <div class="modal large">
+                <span class="close-button">&times;</span>
+                <h2 class="modal-title">Получение услуги</h2>
+                <p class="modal-text">
+                    После успешной оплаты доступ к серверу предоставляется
+                    автоматически или вручную администратором.
+                    <br><br>
+                    Для получения услуги необходимо указать корректный никнейм
+                    Minecraft при оплате.
+                </p>
+            </div>
+        </div>
+        
+
+        <div id="modalOverlay" class="overlay">
+            <div class="modal">
+                <span class="close-button" id="closeModal">&times;</span>
+                <h2 class="modal-title">Вход на сервер</h2>
+                <p class="modal-price">Стоимость проходки: <span>100 ₽</span></p>
+                
+                <form action="/create-payment" method="POST">
+                    <input type="text" name="nickname" class="modal-input" placeholder="Введите ваш ник" required>
+                    <button type="submit" class="modal-pay-button">Оплатить</button>
+                </form>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
