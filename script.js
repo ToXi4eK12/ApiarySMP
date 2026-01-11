@@ -26,28 +26,37 @@ payForm.onsubmit = async (e) => {
     const nickname = payForm.querySelector('input[name="nickname"]').value;
     const payButton = payForm.querySelector('.modal-pay-button');
     
-    payButton.innerText = "Загрузка...";
+    payButton.innerText = "Создание платежа...";
     payButton.disabled = true;
 
-try {
-    const response = await fetch('http://77.34.6.100:25570/test-payment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nickname: nickname })
-    });
+    try {
+        const response = await fetch('http://77.34.6.100:25570/test-payment', {
+            method: 'POST',
+            mode: 'cors', // Добавляем режим CORS
+            headers: { 
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify({ nickname: nickname })
+        });
 
-    const result = await response.json();
-    
-    if (result.success) {
-        alert("Успешно! " + result.message);
-        location.reload(); // Перезагружаем страницу
-    } else {
-        alert("Ошибка: " + (result.error || "Не удалось выполнить команду"));
+        const result = await response.json();
+        
+        // ПРОВЕРКА: Если сервер прислал ссылку на оплату
+        if (result.success && result.pay_url) {
+            // Перенаправляем пользователя на страницу ЮMoney
+            window.location.href = result.pay_url;
+        } else if (result.success) {
+            // Если оплата не требуется (например, тестовый режим)
+            alert("Успешно! " + result.message);
+            location.reload();
+        } else {
+            alert("Ошибка: " + (result.error || "Не удалось создать платеж"));
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Ошибка соединения с API сервера");
+    } finally {
+        payButton.innerText = "Оплатить";
+        payButton.disabled = false;
     }
-} catch (err) {
-    alert("Ошибка соединения с API");
-} finally {
-    payButton.innerText = "Оплатить";
-    payButton.disabled = false;
-}
 };

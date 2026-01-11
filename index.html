@@ -14,7 +14,7 @@
             </div>
             <nav>
                 <a href="#">О сервере</a>
-                <a href="#">Сообщество</a>
+                <a href="#">Сообзество</a>
                 <a href="#">Магазин</a>
             </nav>
         </header>
@@ -38,6 +38,34 @@
                 <img src="./img/буэно3 1.svg" class="BeeMain">
             </div>
         </main>
+        <div class="info">
+            <div id="ImgInfo1">
+                <img src="./img/info1.svg" style="width: 800px; height: 500px;z-index: 2;">
+                <img src="./img/hiveInfo1.svg" style="z-index: 3;position: absolute;right: -70px;bottom: 0px; animation: IconGlide 15s  reverse infinite;">
+                <img src="./img/HoneyBottleInfo1.svg" style="z-index: 3;position: absolute;left: -100px;top: -120px;animation: IconGlide 15s infinite;">
+                <img src="./img/hiveInfo2.svg" style="z-index: -1;position: absolute;right: -80px;top: -110px;filter: blur(1.5px);animation: IconGlide 20s infinite;">
+            </div>
+            <div id="TextInfo1">
+                <H2>Только думаешь присоедениться?</H2>
+                <p>На сервере рады новчикам, куча кланов/гильдий/союзов в которые ты можешь вступить , но и про классическое выживание забывать не стоит, реализовывай свои проекты, учавствуй в ивентах и становись частью истории нашего сервера!</p>
+                <H2>С нами не скучно</H2>
+                <p>На сервере регулярно проводятся масштабные ивенты, так что ты точно не заскучаешь! А в коротких перерывах между ивентами ты сможешь принимать участие и в других активностях.</p>
+                <H2>Что есть на сервере?</H2>
+                <p>Дружелюбное сообщество игроков и целая куча плагинов, которая помогает стабильной работе сервера. Нам не хватает только тебя!</p>
+            </div>
+            <div id="ImgInfo2">
+                <img src="./img/info2.svg" style="width: 850px;height: 500px;">
+                <img src="./img/hiveInfo4.svg" style="position: absolute; top: -60px; right: -40px;animation: IconGlide reverse 15s infinite;">
+                <img src="./img/HoneyBottleInfo2.svg" style="position: absolute; bottom: 0; left: -135px;animation: IconGlide 10s infinite;">
+            </div>
+            <div id="TextInfo2">
+                <H2>Пчелиное сообщество</H2>
+                <p>Apiary SMP — это не просто сервер, это большая семья. У нас более 400 активных игроков, которые помогают друг другу и вместе создают удивительные проекты.
+                    Присоединяйтесь к нашему Discord-сообществу, участвуйте в конкурсах, обсуждайте обновления и находите новых друзей!</p>
+                <H2>Стабильный хостинг</H2>
+                <p>Сервер работает круглосуточно и без перебоев, мы круглосуточно следим за состоянием нашего хостинга.</p>
+            </div>
+        </div>
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-block">
@@ -108,21 +136,27 @@
         </div>
         
 
+        <!--<div id="modalOverlay" class="overlay">
+            <div class="modal">
+                <span class="close-button" id="closeModal">&times;</span>
+                <h2 class="modal-title">Вход на сервер</h2>
+                <p class="modal-price">Стоимость проходки: <span>100 ₽</span></p>
+                
+                <form id="paymentForm">
+                    <input type="text" name="nickname" class="modal-input" placeholder="Введите ваш ник" required>
+                    <button type="submit" class="modal-pay-button">Оплатить</button>
+                </form>
+            </div>
+        </div>-->
         <div id="modalOverlay" class="overlay">
             <div class="modal">
                 <span class="close-button" id="closeModal">&times;</span>
                 <h2 class="modal-title">Вход на сервер</h2>
-                <p class="modal-price">Стоимость проходки: <span>249 ₽</span></p>
-                
-                <form action="/create-payment" method="POST">
-                    <input type="text" name="nickname" class="modal-input" placeholder="Введите ваш ник" required>
-                    <button type="submit" class="modal-pay-button">Оплатить</button>
-                </form>
+                <p class="modal-price">Стоимость проходки: <span>249₽</span></p>
+                <p class="modal-price">к сожалению оплата на сайте пока что не работает, для покупки проходки напишите в тгк @apiarysmp</p>
             </div>
         </div>
 
         <script src="./script.js"></script>
     </body>
-
 </html>
-
