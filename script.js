@@ -24,37 +24,37 @@ payForm.onsubmit = async (e) => {
     e.preventDefault();
     
     const nickname = payForm.querySelector('input[name="nickname"]').value;
+    const itemType = document.getElementById('itemType').value; // Берем тип товара
     const payButton = payForm.querySelector('.modal-pay-button');
     
     payButton.innerText = "Создание платежа...";
     payButton.disabled = true;
 
     try {
-        const response = await fetch('http://77.34.6.100:25570/test-payment', {
+        // Используем твой новый поддомен с HTTPS
+        const response = await fetch('https://pay.apiarysmp.ru/create', {
             method: 'POST',
-            mode: 'cors', // Добавляем режим CORS
+            mode: 'cors',
             headers: { 
                 'Content-Type': 'application/json' 
             },
-            body: JSON.stringify({ nickname: nickname })
+            body: JSON.stringify({ 
+                nickname: nickname,
+                type: itemType 
+            })
         });
 
         const result = await response.json();
         
-        // ПРОВЕРКА: Если сервер прислал ссылку на оплату
-        if (result.success && result.pay_url) {
-            // Перенаправляем пользователя на страницу ЮMoney
-            window.location.href = result.pay_url;
-        } else if (result.success) {
-            // Если оплата не требуется (например, тестовый режим)
-            alert("Успешно! " + result.message);
-            location.reload();
+        if (result.url) {
+            // Перенаправляем на страницу оплаты ЮKassa
+            window.location.href = result.url;
         } else {
             alert("Ошибка: " + (result.error || "Не удалось создать платеж"));
         }
     } catch (err) {
         console.error(err);
-        alert("Ошибка соединения с API сервера");
+        alert("Ошибка соединения с сервером оплаты. Проверьте, запущен ли Python скрипт.");
     } finally {
         payButton.innerText = "Оплатить";
         payButton.disabled = false;
