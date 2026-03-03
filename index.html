@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>ApiarySMP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,26 +13,28 @@
             <div id="Logo">
                 <a href="">ApiarySMP</a>
             </div>
+            <!--
             <nav>
                 <a href="#">О сервере</a>
                 <a href="#">Сообщество</a>
                 <a href="#">Магазин</a>
             </nav>
+        -->
         </header>
         <main>
             <div id="MainText">
               <div>
-                <h1 class="ApiarySMPMain">ApiarySMP - Жужим вместе</h1>
+                <h1 class="ApiarySMPMain">ApiarySMP — Жужжим вместе</h1>
               </div>
               <p>
-                Сервер с развивающимся сообществом, это не</br>
-                просто ванила - увлекательные ивенты которые</br>
-                проводяк как игроки так и администарция сервера,</br>
-                поддержка 24/7, внутриние суды и хорошая </br>
-                модерация, заинтригован? Тогда чего ты ждешь,</br>
-                присоеденяйся быстрее, не упусти свой шанс!
+                Сервер с развивающимся сообществом — это не<br>
+                просто ванилла. Увлекательные ивенты, которые<br>
+                проводят как игроки, так и администрация сервера,<br>
+                поддержка 24/7, внутренние суды и хорошая<br>
+                модерация. Заинтригован? Тогда чего ты ждешь?<br>
+                Присоединяйся скорее, не упусти свой шанс!
               </p>
-              <button class="MainButton" id="openModal">Присоеденится</button>
+              <button class="MainButton" onclick="openModal()">Присоединиться</button>
             </div>
             <div id="Bee">
                 <img src="./img/NeonMain.svg" class="NeonMain">
@@ -46,26 +49,204 @@
                 <img src="./img/hiveInfo2.svg" style="z-index: -1;position: absolute;right: -80px;top: -110px;filter: blur(1.5px);animation: IconGlide 20s infinite;">
             </div>
             <div id="TextInfo1">
-                <H2>Только думаешь присоедениться?</H2>
-                <p>На сервере рады новчикам, куча кланов/гильдий/союзов в которые ты можешь вступить , но и про классическое выживание забывать не стоит, реализовывай свои проекты, учавствуй в ивентах и становись частью истории нашего сервера!</p>
-                <H2>С нами не скучно</H2>
-                <p>На сервере регулярно проводятся масштабные ивенты, так что ты точно не заскучаешь! А в коротких перерывах между ивентами ты сможешь принимать участие и в других активностях.</p>
-                <H2>Что есть на сервере?</H2>
-                <p>Дружелюбное сообщество игроков и целая куча плагинов, которая помогает стабильной работе сервера. Нам не хватает только тебя!</p>
+                <h2>Только думаешь присоединиться?</h2>
+                <p>На сервере рады новичкам. У нас есть множество кланов, гильдий и союзов, в которые ты можешь вступить. Но и про классическое выживание забывать не стоит: реализуй свои проекты, участвуй в ивентах и становись частью истории нашего сервера!</p>
+                <h2>С нами не скучно</h2>
+                <p>На сервере регулярно проводятся масштабные ивенты, так что ты точно не заскучаешь! А в коротких перерывах между ними ты сможешь принимать участие в других активностях.</p>
+                <h2>Что есть на сервере?</h2>
+                <p>Дружелюбное сообщество игроков и целый набор плагинов, обеспечивающих стабильную работу сервера. Нам не хватает только тебя!</p>
             </div>
+
             <div id="ImgInfo2">
                 <img src="./img/info2.svg" style="width: 850px;height: 500px;">
                 <img src="./img/hiveInfo4.svg" style="position: absolute; top: -60px; right: -40px;animation: IconGlide reverse 15s infinite;">
                 <img src="./img/HoneyBottleInfo2.svg" style="position: absolute; bottom: 0; left: -135px;animation: IconGlide 10s infinite;">
             </div>
             <div id="TextInfo2">
-                <H2>Пчелиное сообщество</H2>
-                <p>Apiary SMP — это не просто сервер, это большая семья. У нас более 400 активных игроков, которые помогают друг другу и вместе создают удивительные проекты.
-                    Присоединяйтесь к нашему Discord-сообществу, участвуйте в конкурсах, обсуждайте обновления и находите новых друзей!</p>
-                <H2>Стабильный хостинг</H2>
-                <p>Сервер работает круглосуточно и без перебоев, мы круглосуточно следим за состоянием нашего хостинга.</p>
+                <h2>Пчелиное сообщество</h2>
+                <p>Apiary SMP — это не просто сервер, это большая семья. У нас более 400 активных игроков, которые помогают друг другу и вместе создают удивительные проекты. Присоединяйся к нашему Discord-сообществу, участвуй в конкурсах, обсуждай обновления и находи новых друзей!</p>
+                <h2>Стабильный хостинг</h2>
+                <p>Сервер работает круглосуточно и без перебоев. Мы постоянно следим за состоянием нашего оборудования.</p>
             </div>
         </div>
+        <!--
+        <section class="roadmap">
+    <div class="roadmap-container">
+        <h2 class="roadmap-title">ApiarySMP Season 1</h2>
+        
+        <div class="roadmap-content">
+            <div class="rd-row">
+                <div class="rd-card">Открытие сервера</div>
+                <div class="rd-arrow">1 неделя &rarr;</div>
+                <div class="rd-card">Открытие ада</div>
+                <div class="rd-arrow">2 недели &rarr;</div>
+                <div class="rd-card">Открытие энда</div>
+            </div>
+
+            <div class="rd-path-right">
+                <span>3 недели</span>
+                <div class="rd-line-v"></div>
+            </div>
+
+            <div class="rd-row rd-reverse">
+                <div class="rd-card">Первый обход</div>
+                <div class="rd-arrow">&larr; 7 недель</div>
+                <div class="rd-card">Бункер на 981</div>
+                <div class="rd-arrow">&larr; 5 недель</div>
+                <div class="rd-card">Судная ночь</div>
+            </div>
+
+            <div class="rd-path-left">
+                <span>8 недель</span>
+                <div class="rd-line-v"></div>
+            </div>
+
+            <div class="rd-row">
+                <div class="rd-card">Видео про сервера</div>
+                <div class="rd-arrow">9 недель &rarr;</div>
+                <div class="rd-card">Пчелиный ивент</div>
+                <div class="rd-arrow">12 недель &rarr;</div>
+                <div class="rd-card">981 Champions</div>
+            </div>
+
+            <div class="rd-path-right">
+                <span>14 недель</span>
+                <div class="rd-line-v"></div>
+            </div>
+
+            <div class="rd-row rd-reverse">
+                <div class="rd-card">Битва строителей</div>
+                <div class="rd-arrow">&larr; ? недель</div>
+                <div class="rd-card">???</div>
+                <div class="rd-arrow">&larr; ? недель</div>
+                <div class="rd-card">???</div>
+            </div>
+        </div>
+    </div>
+</section>    -->
+
+<section class="reviews-section">
+    <h2 class="reviews-title">Отзывы наших пчелок</h2>
+    
+    <div class="marquee-window">
+        <div class="marquee-track">
+            <div class="review-card">
+                <img src="./img/skin-avatar 2.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">barnetyz</h4>
+                    <p class="review-text text-large">комьюнити поможет даже с тяжелыми наркотиками</p>
+                </div>
+            </div>
+            <div class="review-card admin-card">
+                <img src="./img/Rectangle 4.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">ToXi4eK14 (Adm)</h4>
+                    <p class="review-text text-large">Ну просто жужащая хуйня!</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="./img/skin-avatar (1) 1.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">Astat_121</h4>
+                    <p class="review-text text-small">Спасибо серверу мой парализованый дед не мог ходить 10 лет но когда я начал играть на сервере он втсал на ноги чтобы вьебать мне</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="./img/skin-avatar 1.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">HoldDog</h4>
+                    <p class="review-text text-small">Объективно, сервер подходит для игры: коммуникация с игроками, ивенты, торговля, города и т.д. позволяют провести время с наслаждением.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="./img/skin-avatar (2) 1.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">NesquickWithBeer</h4>
+                    <p class="review-text text-large">Клевый ванильный сервер!</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="./img/Rectangle 5.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">stazhr</h4>
+                    <p class="review-text">Прикольный сервер со своим вайбом пчел 🐝</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="./img/skin-avatar (4) 1.png" class="card-avatar">
+                <div class="card-body">
+                    <h4 class="username">timofokerr</h4>
+                    <p class="review-text text-small">Интересные ивенты и средний онлайн, жить не смогу...</p>
+                </div>
+            </div>
+
+            <div class="review-card"><img src="./img/skin-avatar 2.png" class="card-avatar"><div class="card-body"><h4 class="username">barnetyz</h4><p class="review-text text-large">комьюнити поможет даже с тяжелыми наркотиками</p></div></div>
+            <div class="review-card"><img src="./img/Rectangle 3.png" class="card-avatar"><div class="card-body"><h4 class="username">molodaya_mama_09</h4><p class="review-text text-small">...когда я впервые заходил я не подразумевал что он станет как 2 семья...</p></div></div>
+            <div class="review-card admin-card"><img src="./img/Rectangle 4.png" class="card-avatar"><div class="card-body"><h4 class="username">ToXi4eK14 (Adm)</h4><p class="review-text text-large">Ну просто жужащая хуйня!</p></div></div>
+            <div class="review-card"><img src="./img/skin-avatar (1) 1.png" class="card-avatar"><div class="card-body"><h4 class="username">Astat_121</h4><p class="review-text text-small">Спасибо серверу, мой дед встал на ноги спустя 10 лет...</p></div></div>
+            <div class="review-card"><img src="./img/skin-avatar 1.png" class="card-avatar"><div class="card-body"><h4 class="username">HoldDog</h4><p class="review-text">Объективно, сервер подходит для игры...</p></div></div>
+            <div class="review-card"><img src="./img/skin-avatar (2) 1.png" class="card-avatar"><div class="card-body"><h4 class="username">NesquickWithBeer</h4><p class="review-text text-large">Клевый ванильный сервер!</p></div></div>
+            <div class="review-card"><img src="./img/Rectangle 5.png" class="card-avatar"><div class="card-body"><h4 class="username">stazhr</h4><p class="review-text">Прикольный сервер со своим вайбом пчел 🐝</p></div></div>
+            <div class="review-card"><img src="./img/skin-avatar (4) 1.png" class="card-avatar"><div class="card-body"><h4 class="username">timofokerr</h4><p class="review-text text-small">Интересные ивенты и средний онлайн...</p></div></div>
+        </div>
+    </div>
+</section>
+
+  <div class="tg-section-wrapper">
+
+    <img src="./img/буэно5 1.svg" class="decor-item honey-top-left floating" alt="honeycomb">
+    <img src="./img/буэно4 2.svg" class="decor-item honey-center-top floating-rev" alt="honeycomb">
+    <img src="./img/буэно5 1.svg" class="decor-item honey-bottom-center floating" alt="honeycomb">
+    <img src="./img/буэно5 1.svg" class="decor-item potion-right floating-rev" alt="potion">
+
+
+    <div class="tg-container">
+
+        <div class="tg-text-col">
+            <h2>Telegram-канал <span class="highlight-yellow">Apiary SMP</span></h2>
+            <p>В нашем Telegram-канале <b>ты сможешь поучаствовать в розыгрыше проходок, который проводится раз в неделю</b>, а также оперативно узнавать обо всех новостях сервера, различных анонсах и, конечно, ловить спойлеры к ивентам!</p>
+        </div>
+        <div class="tg-card-col">
+            <div class="tg-card-outer">
+                <div class="tg-card-inner">
+                    <svg class="tg-plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"/></svg>
+                    <h3>Apiary SMP в Telegram</h3>
+                    <p>будь в курсе всего!</p>
+                    <a href="https://t.me/apiarysmp" class="tg-btn">@apiarysmp</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+  <div class="tg-section-wrapper">
+    <div class="tg-container">
+
+    <img src="./img/буэно4 2.svg" class="buy-decor-item-honey-center-top-floating-rev" alt="honeycomb">
+    <img src="./img/буэно5 1.svg" class="buy-decor-item-potion-right-floating-rev" alt="potion">
+
+
+        <div class="tg-card-col">
+            <div class="tg-card-outer">
+                <div class="tg-card-inner">
+                    <h3>Проходка на Apiary SMP</h3>
+                            <p>Стань частью дружной семьи, участвуй в эксклюзивных ивентах и просто веселись на нашем прекрасном сервере Apiary SMP!</p>
+                    <button class="tg-btn-2" onclick="openModal()">купить</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="bee-pic">
+            <img src="img/пчела с факелом.png">
+        </div>
+
+    </div>
+</div>
+
+
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-block">
@@ -141,7 +322,6 @@
                 <span class="close-button" id="closeModal">&times;</span>
                 <h2 class="modal-title">Вход на сервер</h2>
                 <p class="modal-price">Стоимость: <span id="itemPrice">175₽</span></p>
-                <p class="modal-price">Не забудьте перейти на наш дискорд сервер:<a href="https://discord.gg/HbbaCqaD">тык</a></p>
                 
                 <form id="paymentForm">
                     <input type="hidden" name="item_type" id="itemType" value="pass">
@@ -164,10 +344,5 @@
     </body>
 
 </html>
-
-
-
-
-
 
 

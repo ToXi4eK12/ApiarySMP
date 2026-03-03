@@ -5,13 +5,14 @@
 }
 body{
     background: linear-gradient(-20deg, #1E1E1E, #000000);
-    height: 500vh;
+    height: auto;
 }
 
 header{
     position: relative;
     display: flex;
-    width:1000px;
+    width: 95%;
+    max-width: 1200px;
     height: 45px;
     margin-left: 162px;
     margin-right: 162px;
@@ -295,6 +296,8 @@ main{
     cursor: pointer;
 }
 
+
+
 footer.footer {
     margin-top: 200px;
     padding: 60px 0;
@@ -341,3 +344,567 @@ footer.footer {
     font-size: 18px;
     line-height: 1.5;
 }
+
+/* Общий контейнер секции */
+.roadmap {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.roadmap-container {
+    background: #151515; /* Темный фон карточки */
+    border: 1px solid #333;
+    border-radius: 40px;
+    padding: 60px 80px;
+    box-shadow: 0 0 100px rgb(255, 196, 0); /* Легкое свечение */
+    max-width: 1000px;
+}
+
+.roadmap-title {
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Стили рядов */
+.rd-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.rd-row.rd-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Стили плашек с текстом */
+.rd-card {
+    background: #FF9E42; /* Оранжевый как на скрине */
+    color: #000;
+    padding: 14px 24px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 15px;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.rd-card.rd-yellow {
+    background: #FFC300; /* Ярко-желтый для акцента */
+}
+
+/* Стрелки и подписи недель */
+.rd-arrow {
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Вертикальные переходы (Змейка) */
+.rd-path-right, .rd-path-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+.rd-path-right { align-items: flex-end; padding-right: 80px; }
+.rd-path-left { align-items: flex-start; padding-left: 80px; }
+
+.rd-line-v {
+    width: 2px;
+    height: 30px;
+    background: #333;
+    margin-top: 5px;
+    position: relative;
+}
+
+/* Маленький наконечник стрелки вниз */
+.rd-line-v::after {
+    content: '▼';
+    position: absolute;
+    bottom: -8px;
+    left: -5px;
+    font-size: 10px;
+    color: #333;
+}
+
+/* 1. Основной контейнер */
+/* Контейнер */
+.reviews-section {
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-title {
+    color: #fff;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+
+/* Лента */
+.marquee-window {
+    width: 100%;
+    display: flex;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 40px; /* Расстояние между капсулами */
+    animation: scrollInfinite 35s linear infinite;
+    padding: 25px 0; /* Чтобы тень не обрезалась */
+}
+
+/* КАРТОЧКА-КАПСУЛА */
+.review-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #000;
+    
+    /* СТРОГО ОДИНАКОВЫЙ РАЗМЕР */
+    width: 450px;
+    height: 100px;
+    
+    padding: 0 30px 0 12px;
+    border-radius: 25px;
+    
+    /* Яркий неон */
+    border: 2px solid #FFC300;
+    box-shadow: 0 0 20px rgba(255, 195, 0, 0.5);
+    
+    flex-shrink: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Аватар */
+.card-avatar {
+    width: 85px;
+    height: 85px;
+}
+
+/* Тело текста */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.username {
+    color: #FFC300;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.review-text {
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Вариации шрифта */
+.text-large { font-size: 18px; }
+.text-small { font-size: 14px; }
+
+/* Бесконечный цикл */
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Пауза при наведении */
+.marquee-window:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-window:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+
+/* Подключаем похожий шрифт (если есть возможность, лучше подключить Inter или Montserrat в <head>) */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+  
+
+    /* Основная секция */
+    .tg-section-wrapper {
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        position: relative; 
+        padding: 80px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Контейнер, который держит контент в центре и не дает разлетаться */
+    .tg-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1710px; /* Максимальная ширина контента */
+        width: 100%;
+        gap: 40px; /* Расстояние между текстом и карточкой */
+        position: relative;
+        z-index: 2; /* Контент поверх декораций */
+    }
+
+    /* --- Левая колонка с текстом --- */
+    .tg-text-col {
+        flex: 1; /* Занимает оставшееся место */
+        max-width: 800px;
+    }
+
+    .tg-text-col h2 {
+        font-size: 40px;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .highlight-yellow {
+        color: #FFC700; /* Ярко-желтый цвет */
+    }
+
+    .tg-text-col p {
+        font-size: 28px;
+        line-height: 1.5;
+        color: #E0E0E0;
+    }
+
+    .tg-text-col b {
+        font-weight: 800;
+        color: white;
+    }
+
+    /* --- Правая колонка с карточкой --- */
+    .tg-card-col {
+        flex: 0 0 700px; /* Фиксированная ширина для блока карточки */
+    }
+
+    /* Внешняя желтая рамка */
+    .tg-card-outer {
+        background-color: #FFC700;
+        border-radius: 40px;
+        padding: 50px 15px ; /* Толщина желтой рамки */
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Внутренняя темная часть */
+    .tg-card-inner {
+        background-color: #3B2D0B; /* Темно-коричневый/оливковый цвет */
+        border-radius: 30px;
+        padding: 35px 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Иконка самолетика */
+    .tg-plane-icon {
+        width: 100px;
+        height: 60px;
+        fill: white;
+        margin-bottom: 15px;
+        transform: rotate(-10deg); /* Небольшой наклон как на макете */
+    }
+
+    .tg-card-inner h3 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 800;
+    }
+
+    .tg-card-inner p {
+        font-size: 20px;
+        margin: 8px 0 25px 0;
+        opacity: 0.9;
+        font-weight: 400;
+    }
+
+    /* Белая кнопка */
+    .tg-btn {
+        background: white;
+        color: black;
+        text-decoration: none;
+        padding: 14px 40px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 18px;
+        transition: transform 0.2s ease;
+        display: inline-block;
+    }
+
+    .tg-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Декорации (твои картинки) --- */
+    /* ВАЖНО: Убедись, что пути к картинкам (src) правильные */
+    .decor-item {
+        position: absolute;
+        z-index: 1;
+        pointer-events: none; /* Чтобы не мешали кликать */
+    }
+
+    /* Примерное расположение как на макете */
+    .honey-top-left {
+        top: 10px;
+        left: 170px;
+        width: 200px;
+    }
+
+    .honey-center-top {
+        top: -80px;
+        left: 1030px;
+        width: 300px;
+        z-index: 3;
+    }
+
+     .honey-bottom-center {
+        bottom: 30px;
+        left: 43%;
+        width: 120px;
+        opacity: 0.7;
+    }
+
+    .potion-right {
+        bottom: 0px;
+        right: 20px;
+        width: 250px;
+        z-index: 3;
+    }
+
+ .tg-btn-2 {
+    background: white;
+    color: black;
+    text-decoration: none;
+    padding: 14px 40px;
+    width: 220px;
+    max-height: 70px;
+    border-radius: 50px;
+    font-weight: 800; /* Убрал 'px', тут только число */
+    font-size: 23px;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    cursor: pointer; /* ВОТ ЭТА СТРОЧКА ДЕЛАЕТ МАГИЮ */
+    }
+
+    .tg-btn-2:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Анимация покачивания (опционально) */
+    .floating { animation: float 6s ease-in-out infinite; }
+    .floating-rev { animation: float 8s ease-in-out infinite reverse; }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(5deg); }
+    }
+
+    .buy-decor-item-honey-center-top-floating-rev {
+        bottom: 80px;
+        left: 550px;
+        width: 250px;
+        z-index: 3;
+        position: absolute;
+    }
+
+    .buy-decor-item-potion-right-floating-rev {
+        bottom: 350px;
+        left: -122px;
+        width: 300px;
+        z-index: 3;
+        position: absolute;
+    }
+
+.info{
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 100px;
+    grid-row-gap: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.info div H2{
+    margin-top: 10px;
+    font-size: 45px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-style: medium;
+    font-weight: 500;
+}
+.info div p{
+    font-size: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-style: regular;
+    font-weight: 300;
+}
+
+
+#ImgInfo1{
+    margin-top: 60px;
+    position: relative;
+    grid-row: 1;
+    grid-column: 1;
+}
+#TextInfo1{
+    grid-row: 1;
+    grid-column: 2;
+}
+#TextInfo2{
+    margin-top: 20px;
+    grid-row: 2;
+    grid-column: 1;
+}
+#ImgInfo2{
+    position: relative;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* --- ИТОГОВЫЙ АДАПТИВ (1024px и ниже) --- */
+
+/* --- МИНИМАЛИСТИЧНЫЙ МОБИЛЬНЫЙ ВАРИАНТ --- */
+
+@media (max-width: 1024px) {
+    /* 1. Прячем всё лишнее */
+    .info, .tg-container, nav, .NeonMain, [class*="decor-item"], [class*="floating"] {
+        display: none !important;
+    }
+
+    body { height: auto !important; }
+
+     #Bee {
+        display: flex !important;
+        justify-content: center !important;
+        float: none !important;
+        margin: 0 auto 20px auto !important;
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .BeeMain {
+        width: 200px; /* Оптимально для телефона */
+        height: auto;
+        margin: 0 auto;
+        animation: float 3s ease-in-out infinite; /* Чуть ускорили левитацию */
+    }
+
+    header {
+        margin: 30px 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        padding: 0;
+    }
+
+    /* 4. Главный блок — Центрирование всего */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        grid-template-columns: 1fr; /* Отключаем сетку */
+    }
+
+    /* 2. Пчела строго по центру */
+   
+
+    #MainText {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .ApiarySMPMain {
+        font-size: 32px;
+        margin-bottom: 15px;
+        color: #FFC300;
+    }
+
+    #MainText p {
+        font-size: 23px;
+        line-height: 1.4;
+        margin-bottom: 35px;
+        color: #fff;
+    }
+    
+    #MainText p br { display: none; }
+
+    .MainButton {
+        display: inline-block;
+        width: 100%;
+        max-width: 300px;
+        padding: 20px 0;
+        font-size: 22px;
+        margin-bottom: 80px;
+    }
+
+    .review-container { margin-bottom: 0 !important; }
+    .marquee { padding-bottom: 0 !important; }
+    footer { margin-top: -10px !important; }
+    /* 3. КОЛЕСО ОТЗЫВОВ */
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        /* МЕНЯЕМ ИМЯ НА scroll-mobile */
+        animation: scroll-mobile 70s linear infinite !important; 
+        gap: 20px;
+    }
+
+    /* 4. ФУТЕР — Клеим к колесу */
+    footer {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-section {
+        align-items: center !important;
+    }
+}
+
+    /* 5. УНИКАЛЬНАЯ АНИМАЦИЯ ТОЛЬКО ДЛЯ МОБИЛОК */
+    @keyframes scroll-mobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-700%); } 
+    }
+
+
+
+

@@ -3,7 +3,10 @@ const openBtn = document.getElementById('openModal');
 const closeBtn = document.getElementById('closeModal');
 const payForm = document.querySelector('.modal form');
 
-openBtn.onclick = () => modal.style.display = 'flex';
+
+function openModal() {
+    modal.style.display = 'flex';
+  }
 closeBtn.onclick = () => modal.style.display = 'none';
 
 document.querySelectorAll(".footer-link").forEach(link => {
@@ -60,3 +63,5 @@ payForm.onsubmit = async (e) => {
         payButton.disabled = false;
     }
 };
+
+
