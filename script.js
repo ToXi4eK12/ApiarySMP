@@ -44,7 +44,7 @@ payForm.onsubmit = async (e) => {
             },
             body: JSON.stringify({ 
                 nickname: nickname,
-                type: itemType 
+                type: itemType,
                 promocode: promocode
             })
         });
@@ -65,6 +65,7 @@ payForm.onsubmit = async (e) => {
         payButton.disabled = false;
     }
 };
+
 
 
 
