@@ -27,6 +27,7 @@ payForm.onsubmit = async (e) => {
     e.preventDefault();
     
     const nickname = payForm.querySelector('input[name="nickname"]').value;
+    const promocode = payForm.querySelector('input[name="promocode"]').value;
     const itemType = document.getElementById('itemType').value; // Берем тип товара
     const payButton = payForm.querySelector('.modal-pay-button');
     
@@ -44,6 +45,7 @@ payForm.onsubmit = async (e) => {
             body: JSON.stringify({ 
                 nickname: nickname,
                 type: itemType 
+                promocode: promocode
             })
         });
 
@@ -63,5 +65,6 @@ payForm.onsubmit = async (e) => {
         payButton.disabled = false;
     }
 };
+
 
 
